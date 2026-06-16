@@ -33,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* මුළු Container එකම Premium විදිහට සකස් කිරීම */
+        /* Container Design */
         .container {
             max-width: 650px;
             margin: 30px auto;
@@ -45,7 +45,7 @@
             position: relative;
         }
 
-        /* Advanced Header - පැත්තකින් Mushroom Silhouette එකක් සහිතව */
+        /* Header Design */
         header {
             background: var(--brand-red);
             text-align: center;
@@ -77,7 +77,6 @@
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* ලෝගෝ එක උඩට මවුස් එක ගෙනිච්චම පොඩ්ඩක් Bounce වෙනවා */
         header:hover .brand-logo-img {
             transform: scale(1.04);
         }
@@ -98,7 +97,7 @@
             color: #eeeeee;
         }
 
-        /* --- ADVANCED TAB SYSTEM --- */
+        /* --- TAB SYSTEM --- */
         .tab-navigation {
             display: flex;
             gap: 10px;
@@ -143,7 +142,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- ADVANCED CARDS DESIGN --- */
+        /* --- CARDS DESIGN --- */
         .step-block {
             display: flex;
             background: var(--card-bg);
@@ -154,7 +153,6 @@
             transition: all 0.3s ease;
         }
 
-        /* මවුස් එක උඩට ගියපුවම Card එක Glow වෙන ක්‍රමය */
         .step-block:hover {
             transform: translateY(-4px);
             border-color: rgba(255, 242, 0, 0.4);
@@ -169,7 +167,6 @@
             color: var(--brand-yellow);
             margin-right: 20px;
             min-width: 45px;
-            position: relative;
         }
 
         .step-details h3 {
@@ -181,7 +178,7 @@
         }
 
         .step-block:hover .step-details h3 {
-            color: var(--brand-yellow); /* Hover වෙද්දී මාතෘකාව කහ වෙනවා */
+            color: var(--brand-yellow);
         }
 
         .step-details p {
@@ -228,73 +225,6 @@
             font-size: 0.95rem;
         }
 
-        /* --- VIDEO BOX & PULSE BUTTON --- */
-        .video-box {
-            background: linear-gradient(180deg, #0a0a0a, #111111);
-            border: 2px dashed rgba(255, 242, 0, 0.4);
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 35px;
-        }
-
-        .video-box h3 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        .video-box p {
-            color: #aaaaaa;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        /* පාරිභෝගිකයා ඇදගන්නා Pulse Button එක */
-        .btn-play {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--brand-red);
-            color: #ffffff;
-            padding: 16px 40px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 35px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            box-shadow: 0 0 0 0 rgba(230, 33, 41, 0.7);
-            animation: pulseBtn 2s infinite;
-            transition: background-color 0.3s;
-        }
-
-        .btn-play:hover {
-            background-color: #c2131a;
-        }
-
-        @keyframes pulseBtn {
-            0% {
-                transform: scale(0.98);
-                box-shadow: 0 0 0 0 rgba(230, 33, 41, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 15px rgba(230, 33, 41, 0);
-            }
-            100% {
-                transform: scale(0.98);
-                box-shadow: 0 0 0 0 rgba(230, 33, 41, 0);
-            }
-        }
-
-        .btn-play svg {
-            margin-right: 12px;
-            fill: #ffffff;
-            width: 24px;
-            height: 24px;
-        }
-
         footer {
             text-align: center;
             padding: 25px;
@@ -303,6 +233,7 @@
             border-top: 1px solid #1a1a1a;
             background: #050505;
             font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -374,16 +305,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- වීඩියෝ උපදෙස් බොත්තම -->
-            <div class="video-box">
-                <h3>වගා කරන ආකාරය වීඩියෝවෙන් නරඹන්න</h3>
-                <p>පහත බොත්තම ක්ලික් කර බිම්මල් වගා කිට් එක නිවැරදිව නඩත්තු කරන ආකාරය වීඩියෝවෙන් පියවරෙන් පියවර නරඹන්න.</p>
-                <a href="https://www.facebook.com/share/v/18pzB2yf2k/" target="_blank" class="btn-play">
-                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    Watch Video Tutorial
-                </a>
-            </div>
         </div>
 
         <!-- පාදම -->
@@ -392,7 +313,7 @@
         </footer>
     </div>
 
-    <!-- TABS පාලනය කරන සරල ජාවාස්ක්‍රිප්ට් එක -->
+    <!-- TABS පාලනය කරන ජාවාස්ක්‍රිප්ට් එක -->
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
