@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOURMET'S BLOOM 2 BELLY - Premium Mushroom Kit</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #000000;       
+            --brand-red: #e62129;     
+            --brand-yellow: #fff200;  
+            --card-bg: #141414;
+            --border-gold: #fff200;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+            background-color: var(--bg-dark); 
+            color: #ffffff;
+            line-height: 1.7;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+
+        /* මුළු Container එකම Premium විදිහට සකස් කිරීම */
+        .container {
+            max-width: 650px;
+            margin: 30px auto;
+            background: #0a0a0a; 
+            border: 3px solid var(--border-gold); 
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(255, 242, 0, 0.1);
+            position: relative;
+        }
+
+        /* Advanced Header - පැත්තකින් Mushroom Silhouette එකක් සහිතව */
+        header {
+            background: var(--brand-red);
+            text-align: center;
+            padding: 50px 20px; 
+            border-bottom: 6px solid var(--bg-dark); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "🍄";
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            font-size: 7rem;
+            opacity: 0.15;
+            transform: rotate(-15deg);
+        }
+
+        .brand-logo-img {
+            max-width: 92%;
+            height: auto;
+            max-height: 160px; 
+            object-fit: contain;
+            filter: drop-shadow(4px 8px 10px rgba(0, 0, 0, 0.85));
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* ලෝගෝ එක උඩට මවුස් එක ගෙනිච්චම පොඩ්ඩක් Bounce වෙනවා */
+        header:hover .brand-logo-img {
+            transform: scale(1.04);
+        }
+
+        .content {
+            padding: 25px 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.05rem;
+            background: linear-gradient(145deg, rgba(230, 33, 41, 0.15), rgba(0,0,0,0));
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 242, 0, 0.25); 
+            border-left: 6px solid var(--brand-yellow); 
+            margin-bottom: 30px;
+            color: #eeeeee;
+        }
+
+        /* --- ADVANCED TAB SYSTEM --- */
+        .tab-navigation {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: #111;
+            padding: 6px;
+            border-radius: 30px;
+            border: 1px solid #222;
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #888888;
+            padding: 12px 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--brand-yellow);
+            color: #000000;
+            box-shadow: 0 4px 12px rgba(255, 242, 0, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- ADVANCED CARDS DESIGN --- */
+        .step-block {
+            display: flex;
+            background: var(--card-bg);
+            margin-bottom: 18px;
+            border-radius: 12px;
+            padding: 22px;
+            border: 1px solid #222222;
+            transition: all 0.3s ease;
+        }
+
+        /* මවුස් එක උඩට ගියපුවම Card එක Glow වෙන ක්‍රමය */
+        .step-block:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 242, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 242, 0, 0.05);
+            background: #181818;
+        }
+
+        .step-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--brand-yellow);
+            margin-right: 20px;
+            min-width: 45px;
+            position: relative;
+        }
+
+        .step-details h3 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .step-block:hover .step-details h3 {
+            color: var(--brand-yellow); /* Hover වෙද්දී මාතෘකාව කහ වෙනවා */
+        }
+
+        .step-details p {
+            color: #b5b5b5;
+            font-size: 0.98rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 500px) {
+            .benefits-wrapper {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .benefit-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #222222;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            border-color: rgba(230, 33, 41, 0.5);
+            transform: translateY(-3px);
+            background: #181818;
+        }
+
+        .benefit-item h4 {
+            color: var(--brand-yellow);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .benefit-item p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        /* --- VIDEO BOX & PULSE BUTTON --- */
+        .video-box {
+            background: linear-gradient(180deg, #0a0a0a, #111111);
+            border: 2px dashed rgba(255, 242, 0, 0.4);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .video-box h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .video-box p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        /* පාරිභෝගිකයා ඇදගන්නා Pulse Button එක */
+        .btn-play {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--brand-red);
+            color: #ffffff;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 35px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 0 0 rgba(230, 33, 41, 0.7);
+            animation: pulseBtn 2s infinite;
+            transition: background-color 0.3s;
+        }
+
+        .btn-play:hover {
+            background-color: #c2131a;
+        }
+
+        @keyframes pulseBtn {
+            0% {
+                transform: scale(0.98);
+                box-shadow: 0 0 0 0 rgba(230, 33, 41, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 15px rgba(230, 33, 41, 0);
+            }
+            100% {
+                transform: scale(0.98);
+                box-shadow: 0 0 0 0 rgba(230, 33, 41, 0);
+            }
+        }
+
+        .btn-play svg {
+            margin-right: 12px;
+            fill: #ffffff;
+            width: 24px;
+            height: 24px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+            color: #666666;
+            border-top: 1px solid #1a1a1a;
+            background: #050505;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- හෙඩර් එක -->
+        <header>
+            <img src="logo.png" alt="Gourmet's Bloom 2 Belly" class="brand-logo-img">
+        </header>
+
+        <div class="content">
+            <!-- හැඳින්වීම -->
+            <div class="intro-text">
+                බිම්මල් වගා කිට් එකක් (Mushroom Growing Kit) කියන්නේ ඉතාම පහසුවෙන් සහ අඩු ඉඩකඩකින් තමන්ගේ නිවසේදීම බිම්මල් වගා කරගන්න පුළුවන් සරල ක්‍රමයක්.
+            </div>
+
+            <!-- TAB NAVIGATION BUTTONS -->
+            <div class="tab-navigation">
+                <button class="tab-btn active" onclick="openTab(event, 'instructions')">වගා පියවරයන්</button>
+                <button class="tab-btn" onclick="openTab(event, 'benefits')">කිට් එකේ වාසි</button>
+            </div>
+
+            <!-- TAB 1: INSTRUCTIONS -->
+            <div id="instructions" class="tab-content active">
+                <div class="step-block">
+                    <div class="step-number">01</div>
+                    <div class="step-details">
+                        <h3>සුදුසු ස්ථානයක් තෝරා ගැනීම</h3>
+                        <p>කෙලින්ම හිරු එළිය නොවැටෙන, නමුත් හොඳින් වාතාශ්‍රය ලැබෙන, තරමත් අඳුරු සහ සිසිල් ස්ථානයක් (උදාහරණ: කුස්සියේ හෝ කාමරයක මුල්ලක්) තෝරාගන්න.</p>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <div class="step-number">02</div>
+                    <div class="step-details">
+                        <h3>කිට් එක විවෘත කිරීම</h3>
+                        <p>උපදෙස් පත්‍රිකාවට අනුව බෑගයේ නියමිත ස්ථානයකින් කුඩා කැපුමක් සිදු කරන්න.</p>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <div class="step-number">03</div>
+                    <div class="step-details">
+                        <h3>ජලය ඉසීම</h3>
+                        <p>දිනකට දෙතුන් වතාවක් පිරිසිදු ජලය Spray එකක් ආධාරයෙන් එම කැපුම සිදුකළ ස්ථානයට ඉසින්න. (තෙතමනය පවත්වා ගැනීම පමණක් ප්‍රමාණවත්ය).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: BENEFITS -->
+            <div id="benefits" class="tab-content">
+                <div class="benefits-wrapper">
+                    <div class="benefit-item">
+                        <h4>නැවත නැවත අස්වැන්න</h4>
+                        <p>එකම කිට් එකකින් සාමාන්‍යයෙන් මාස තුනක් හෝ තුනහමාරක් යනතුරු නැවත නැවත අස්වැන්න ලබාගත හැක.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>විවිධ බිම්මල් වර්ග</h4>
+                        <p>භූතාන්, ඇමරිකන් ඔයිස්ටර්, පින්ක් ඔයිස්ටර්, ඇබලෝනි, මිල්කි සහ ෂිටාකේ බිම්මල් වර්ග මේ අයුරින් වගා කළ හැක.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>අඩු වෙහෙසක්</h4>
+                        <p>පස් සකස් කරන්න හෝ පෝර දාන්න අවශ්‍ය නොවන නිසා කාර්යබහුල අයට ඉතාම සුදුසුයි.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>විෂබීජ රහිතයි</h4>
+                        <p>නිසි ප්‍රමිතියකට සකස් කරන නිසා වසවිසෙන් තොර පිරිසිදු බිම්මල් නිවස තුළදීම වවාගත හැකියි.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- වීඩියෝ උපදෙස් බොත්තම -->
+            <div class="video-box">
+                <h3>වගා කරන ආකාරය වීඩියෝවෙන් නරඹන්න</h3>
+                <p>පහත බොත්තම ක්ලික් කර බිම්මල් වගා කිට් එක නිවැරදිව නඩත්තු කරන ආකාරය වීඩියෝවෙන් පියවරෙන් පියවර නරඹන්න.</p>
+                <a href="https://www.facebook.com/share/v/18pzB2yf2k/" target="_blank" class="btn-play">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    Watch Video Tutorial
+                </a>
+            </div>
+        </div>
+
+        <!-- පාදම -->
+        <footer>
+            &copy; 2026 GOURMET'S BLOOM 2 BELLY. All Rights Reserved.
+        </footer>
+    </div>
+
+    <!-- TABS පාලනය කරන සරල ජාවාස්ක්‍රිප්ට් එක -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
